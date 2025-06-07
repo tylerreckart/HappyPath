@@ -1,4 +1,4 @@
-# HappyPath Reviews
+# 🌟 HappyPath Reviews
 HappyPath is a lightweight Swift Package designed to intelligently prompt users for app reviews at optimal times, aiming for a better user experience and higher quality ratings. It follows Apple's guidelines by ensuring review prompts are not excessive or disruptive, based on configurable thresholds for app launches, significant user actions, and time elapsed.
 
 ## Features
@@ -33,7 +33,7 @@ Click Add Package.
 ## Usage
 Using HappyPath involves a few simple steps in your application's lifecycle and at points of significant user engagement.
 
-1. Initialization _(Optional: Custom Thresholds)_
+### Initialization _(Optional: Custom Thresholds)_
 The ReviewManager uses default thresholds, but you can customize them during initialization if needed.
 
 ```swift
@@ -79,7 +79,7 @@ struct MyApp: App {
 ```
 
 
-2. Incrementing App Launch Count
+### Incrementing App Launch Count
 Call `incrementAppLaunchCount()` once every time your app launches. A good place for this is within your App struct's onAppear for its main WindowGroup or in your AppDelegate.
 
 ```swift
@@ -96,7 +96,7 @@ struct ContentView: View {
 }
 ```
 
-3. Requesting Review on App Active
+### Requesting Review on App Active
 You should also call `requestReviewOnAppActive()` when your app becomes active. This method will check for the minimum launch count and days since first launch before considering a review prompt. This is a good place to trigger a potential prompt without interrupting the user's flow too early.
 
 ```swift
@@ -121,7 +121,7 @@ struct ContentView: View {
 ```
 
 
-4. Logging Significant Actions
+### Logging Significant Actions
 Call `logSignificantAction()` whenever a user performs an action that indicates they are engaged with your app and likely having a positive experience. This could be completing a task, saving data, or using a key feature.
 
 ```swift
@@ -144,7 +144,7 @@ struct SettingsView: View {
 }
 ```
 
-5. Resetting Counters _(Development/Testing Only)_
+### Resetting Counters _(Development/Testing Only)_
 For testing purposes, you can reset all review counters:
 
 ```swift
